@@ -1,0 +1,32 @@
+{
+  "name": "koa-server",
+  "version": "1.0.0",
+  "description": "personal koa server for blog project.",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/planningFor/koa-server.git"
+  },
+  "keywords": [
+    "koa",
+    "server"
+  ],
+  "author": "Jason Young",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/planningFor/koa-server/issues"
+  },
+  "homepage": "https://github.com/planningFor/koa-server#readme",
+  "dependencies": {
+    "koa": "^1.2.4",
+    "koa-bodyparser": "^2.3.0",
+    "koa-cors": "0.0.16",
+    "koa-log4js": "0.0.1",
+    "koa-router": "^5.4.0",
+    "koa-static": "^2.0.0"
+  }
+}
