@@ -1,18 +1,14 @@
 'use strict';
-const fs = require('fs');
+const mongoose = require('mongoose');
 
 const fn_index = function *() {
     this.type = 'application/json';
-    this.body = JSON.stringify({
-        items: [
-            { title: 'XHR', desc: 'This is desc section.', date: 'September 2009', tag: ['javascript', 'node.js']},
-            { title: 'XHR', desc: 'This is desc section.', date: 'September 2009', tag: ['javascript', 'node.js']},
-            { title: 'XHR', desc: 'This is desc section.', date: 'September 2009', tag: ['javascript', 'node.js']},
-            { title: 'XHR', desc: 'This is desc section.', date: 'September 2009', tag: ['javascript', 'node.js']},
-            { title: 'XHR', desc: 'This is desc section.', date: 'September 2009', tag: ['javascript', 'node.js']}
-        ],
-        length: 5
-    });
+    //  open database connection
+    const db = require('../dbs/config/getArticles')();
+    const Articles = mongoose.model('article_list');
+    this.body = yield Articles.find({});
+    //  close database connection
+    db.disconnect();
 }
 
 module.exports = {

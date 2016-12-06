@@ -7,6 +7,7 @@ const cors = require('koa-cors');
 const mapping = require('./mapping');
 const path = require('path');
 const app = koa();
+// const db = require('./dbs/config/getArticles')();
 
 //  use body-parser to get data from body.
 app.use(bodyParser());
